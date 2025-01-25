@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = main.c util.c
+SRC = main.c util.c init.c simulation.c
 
 NAME = philo
 all: $(NAME)
