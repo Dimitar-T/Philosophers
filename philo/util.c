@@ -6,16 +6,16 @@
 /*   By: dtrendaf <dtrendaf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 14:40:26 by dtrendaf          #+#    #+#             */
-/*   Updated: 2025/01/25 16:51:17 by dtrendaf         ###   ########.fr       */
+/*   Updated: 2025/03/24 20:00:22 by dtrendaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int		str_len(char *str)
+int	str_len(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 		i++;
@@ -39,6 +39,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 long	current_time_in_ms(void)
 {
 	struct timeval	time;
+
 	gettimeofday(&time, NULL);
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
 }

@@ -1,24 +1,19 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-
-SRC = main.c util.c init.c simulation.c
-
+CFLAGS = -Wall -Wextra -Werror -g
+SRC = main.c util.c init.c simulation.c philo_actions.c
+OBJ = $(SRC:.c=.o)
 NAME = philo
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
-clean:
-	rm -f *.o
+clean: 
+	rm -f $(OBJ)
 
-fclean:
+fclean: clean
 	rm -f $(NAME)
 
-re: 
-	fclean all
-
-party:
-	curl parrot.live
+re: fclean all
 
 .PHONY: all clean fclean re party
