@@ -13,7 +13,7 @@ This solution simulates the famous Dining Philosophers problem, where multiple p
 - Between each philosopher are **forks** (resources)
 - A philosopher must acquire **both adjacent forks** to eat
 - If a philosopher doesn't eat within a specified time, they **die**
-- The simulation ends when a philosopher dies or all philosophers have eaten the required number of meals
+- The simulation ends when a philosopher dies, or all philosophers have eaten the required number of meals
 
 ## Features
 
@@ -107,7 +107,7 @@ Run simulation where each philosopher must eat 7 times:
 
 1. **Fork Acquisition**: Each fork has its own mutex protecting access
 2. **State Tracking**: Philosopher state (eating, thinking, sleeping) is protected
-3. **Death Detection**: A reaper thread monitors if any philosopher has exceeded `time_to_die` without eating
+3. **Death Detection**: A reaper function monitors if any philosopher has exceeded `time_to_die` without eating
 4. **Write Safety**: All output is protected by a write lock to prevent garbled messages
 
 ### Key Functions
@@ -119,7 +119,7 @@ Run simulation where each philosopher must eat 7 times:
 - `eating()` - Philosopher acquires forks and eats
 - `thinking()` - Philosopher thinks
 - `sleeping()` - Philosopher sleeps
-- `reaper()` - Monitors philosopher health (starvation detection)
+- `reaper()` - Monitors philosophers health (starvation detection)
 - `print_action()` - Thread-safe output of philosopher actions
 
 ## Output Format
