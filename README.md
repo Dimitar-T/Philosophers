@@ -35,7 +35,6 @@ philo/
 ├── util.c              # Utility functions and helpers
 ├── philosophers.h      # Header file with structures and declarations
 ├── Makefile            # Build configuration
-└── README.md           # This file
 ```
 
 ## Building and Running
@@ -119,7 +118,7 @@ Run simulation where each philosopher must eat 7 times:
 - `eating()` - Philosopher acquires forks and eats
 - `thinking()` - Philosopher thinks
 - `sleeping()` - Philosopher sleeps
-- `reaper()` - Monitors philosophers health (starvation detection)
+- `reaper()` - Monitors a philosopher's health (starvation detection)
 - `print_action()` - Thread-safe output of philosopher actions
 
 ## Output Format
